@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_messages"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:itemCount="20"
+        tools:listitem="@layout/message_item" />
+
+    <View
+        android:id="@+id/dark_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#42A5F5" />
+
+    <LinearLayout
+        android:id="@+id/ll_layout_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E4E4E4"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/et_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@android:color/white"
+            android:hint="Escribe algo"
+            android:inputType="textShortMessage"
+            android:padding="10dp"
+            android:singleLine="true" />
+
+        <ImageButton
+            android:id="@+id/btn_voice_note"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/round_button"
+            android:contentDescription="Nota de voz"
+            android:onClick="startSpeechToText"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_voice_note" />
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="#FFEAE3"
+            android:text="Enviar"
+            android:textColor="@android:color/white"
+            android:textSize="13sp" />
+    </LinearLayout>
+</LinearLayout>
