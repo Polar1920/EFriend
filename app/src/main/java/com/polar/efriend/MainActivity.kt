@@ -38,6 +38,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
+            .setCustomAnimations(
+                R.anim.fade_in, // Animación de entrada
+                R.anim.slide_out, // Animación de salida
+                R.anim.fade_in, // Animación de entrada para el fragmento anterior
+                R.anim.slide_out // Animación de salida para el fragmento anterior
+            )
             .replace(R.id.fragment_container, fragment)
             .commit()
     }
